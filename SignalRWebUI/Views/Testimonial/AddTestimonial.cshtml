@@ -1,0 +1,60 @@
+﻿@using SignalRWebUI.Dtos.TestimonialDto
+@model CreateTestimonialDto
+@{
+    ViewData["Title"] = "AddTestimonial";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="content">
+	<div class="container-fluid">
+		<h4 class="page-title"></h4>
+		<div class="row">
+
+			<div class="col-md-12">
+				<div class="card">
+					<div class="card-header">
+						<div class="card-title">Referans  Ekleme</div>
+					</div>
+					<div class="card-body">
+						<form method="post">
+							<div class="form-group">
+								<label for="text">Referans Adı</label>
+								<input type="text" asp-for="Name" class="form-control">
+
+							</div>
+
+							<div class="form-group">
+								<label for="text">Başlık</label>
+								<input type="text" asp-for="Title" class="form-control">
+
+							</div>
+
+							<div class="form-group">
+								<label for="text">Yorum</label>
+								<input type="text" class="form-control" asp-for="Comment">
+
+
+							</div>
+
+							<div class="form-group">
+								<label for="text">Referans Resim Yolu</label>
+								<input type="text" class="form-control" asp-for="ImageUrl">
+
+							</div>
+							<div class="form-group">
+								<label for="text">Durum</label>
+								<input type="text" class="form-control" asp-for="Status">
+
+							</div>
+
+							<button class="btn btn-success">Ekle</button>
+							<a href="/Testimonial/Index/" class="btn btn-danger">İptal Et</a>
+
+						</form>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

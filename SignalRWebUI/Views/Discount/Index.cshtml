@@ -1,0 +1,59 @@
+﻿@using SignalRWebUI.Dtos.DiscountDto
+@model List<ResultDiscountDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Kategori İşlemleri</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Günün İndirimleri Listesi</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-sub">
+                            İndirim İle İlgili İşlemler Aşağıdan Yapılmaktadır.Sayfa bütünlüğü için 2 adet den fazla indirimli ürün girişi yapmayınız.
+                        </div>
+
+                        <table class="table mt-3">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Başlık</th>
+                                    <th scope="col">Resim Yolu</th>
+                                    <th scope="col">Açıklama</th>
+                                    <th scope="col">Miktar</th>
+                                    <th scope="col">Durum</th>
+
+                                    <th scope="col">Sil</th>
+                                    <th scope="col">Güncelle</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.ID</td>
+                                        <td>@item.Title</td>
+                                        <td>@item.ImageUrl</td>
+                                        <td>@item.Description</td>
+                                        <td>@item.Amount</td>
+                                        <td><a href="/Discount/DeleteDiscount/@item.ID" class="btn btn-outline-primary">Durum</a></td>
+                                        <td><a href="/Discount/DeleteDiscount/@item.ID" class="btn btn-outline-danger">Sil</a></td>
+                                        <td><a href="/Discount/UpdateDiscount/@item.ID" class="btn btn-outline-success">Güncelle</a></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                        <td><a href="/Discount/AddDiscount/" class="btn btn-primary">İndirim Ekle</a></td>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

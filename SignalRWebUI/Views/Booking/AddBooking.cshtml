@@ -1,0 +1,59 @@
+﻿@using SignalRWebUI.Dtos.BookingDto
+@model CreateBookingDto
+@{
+    ViewData["Title"] = "AddBooking";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="content">
+	<div class="container-fluid">
+		<h4 class="page-title"></h4>
+		<div class="row">
+
+			<div class="col-md-12">
+				<div class="card">
+					<div class="card-header">
+						<div class="card-title">Rezervasyon Ekleme İşlemleri Yapılmaktadır.</div>
+					</div>
+					<div class="card-body">
+						<form method="post">
+							<div class="form-group">
+								<label for="text">Misafir Adı-Soyadı</label>
+								<input type="text" asp-for="Name" class="form-control">
+
+							</div>
+
+							<div class="form-group">
+								<label for="text">Telefon Numarası</label>
+								<input type="text" class="form-control" asp-for="Phone">
+
+							</div>
+							<div class="form-group">
+								<label for="text">Mail Adresi</label>
+								<input type="text" class="form-control" asp-for="Mail">
+
+							</div>
+
+							<div class="form-group">
+								<label for="text">Kişi Sayısı</label>
+								<input type="text" asp-for="PersonCount" class="form-control">
+
+							</div>
+							<div class="form-group">
+								<label for="text">Rezervasyon Tarihi</label>
+								<input type="date" asp-for="Date" class="form-control">
+
+							</div>
+
+
+							<button class="btn btn-success">Ekle</button>
+							<a href="/Booking/Index/" class="btn btn-danger">İptal Et</a>
+
+						</form>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

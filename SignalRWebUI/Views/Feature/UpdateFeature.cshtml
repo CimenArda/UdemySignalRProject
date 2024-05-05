@@ -1,0 +1,66 @@
+﻿@using SignalRWebUI.Dtos.FeatureDto
+@model UpdateFeatureDto
+@{
+    ViewData["Title"] = "UpdateFeature";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="content">
+	<div class="container-fluid">
+		<h4 class="page-title"></h4>
+		<div class="row">
+
+			<div class="col-md-12">
+				<div class="card">
+					<div class="card-header">
+						<div class="card-title">Öne Çıkan Alan Ekleme</div>
+					</div>
+					<div class="card-body">
+						<form method="post">
+							<input type="hidden" asp-for="ID" />
+							<div class="form-group">
+								<label for="text">Başlık 1 </label>
+								<input type="text" asp-for="Title1" class="form-control">
+
+							</div>
+							<div class="form-group">
+								<label for="text">Başlık 2</label>
+								<input type="text" asp-for="Title2" class="form-control">
+
+							</div>
+							<div class="form-group">
+								<label for="text">Başlık 3</label>
+								<input type="text" asp-for="Title3" class="form-control">
+
+							</div>
+							<div class="form-group">
+								<label for="text">Açıklama 1 </label>
+								<input type="text" asp-for="Description1" class="form-control">
+
+							</div>
+							<div class="form-group">
+								<label for="text">Açıklama 2</label>
+								<input type="text" asp-for="Description2" class="form-control">
+
+							</div>
+
+							<div class="form-group">
+								<label for="text">Açıklama 3 </label>
+								<input type="text" asp-for="Description3" class="form-control">
+
+							</div>
+
+
+
+							<button class="btn btn-success">Güncelle</button>
+							<a href="/Feature/Index/" class="btn btn-danger">İptal Et</a>
+
+						</form>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
