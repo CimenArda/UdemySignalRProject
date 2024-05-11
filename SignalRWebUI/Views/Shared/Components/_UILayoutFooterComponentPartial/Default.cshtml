@@ -1,0 +1,69 @@
+﻿@using SignalRWebUI.Dtos.ContactDto
+@model List<ResultContactDto>
+  @foreach (var item in Model)
+            {
+    <footer class="footer_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 footer-col">
+                    <div class="footer_contact">
+                        <h4>
+                           İletişim
+                        </h4>
+                        <div class="contact_link_box">
+                            <a href="">
+                                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                <span>
+                                    @item.Location
+                                </span>
+                            </a>
+                            <a href="">
+                                <i class="fa fa-phone" aria-hidden="true"></i>
+                                <span>
+                                    @item.PhoneNumber
+                                </span>
+                            </a>
+                            <a href="">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                                <span>
+                                   @item.Mail
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 footer-col">
+                    <div class="footer_detail">
+                        <a href="" class="footer-logo">
+
+                            @item.FooterTitle
+                        </a>
+                        <p>
+                           @item.FooterDesctiption
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="col-md-4 footer-col">
+                    <h4>
+                        @item.OpenDays
+                    </h4>
+                    <p>
+                       @item.OpenDaysDescription
+                    </p>
+                    <p>
+                       @item.OpenDaysHour
+                    </p>
+                </div>
+            </div>
+            <div class="footer-info">
+                <p>
+                    &copy; <span id="displayYear"></span> All Rights Reserved By
+                    <a href="https://html.design/">Free Html Templates</a><br><br>
+                    &copy; <span id="displayYear"></span> Distributed By
+                    <a href="https://themewagon.com/" target="_blank">ThemeWagon</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+}

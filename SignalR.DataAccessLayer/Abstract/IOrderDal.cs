@@ -9,7 +9,7 @@ namespace SignalR.DataAccessLayer.Abstract
 {
 	public interface IOrderDal :IGenericDal<Order>
 	{
-
+		decimal TodayTotalPrice();
 		int TotalOrderCount();
 
 		int ActiveOrderCount();
@@ -17,6 +17,6 @@ namespace SignalR.DataAccessLayer.Abstract
 		decimal LastOrderPrice();
 
 
-
+		
 	}
 }

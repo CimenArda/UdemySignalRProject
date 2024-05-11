@@ -18,6 +18,10 @@ namespace SignalR.BusinessLayer.Manager
 			_orderDal = orderDal;
 		}
 
+		public decimal TodayTotalPrice()
+		{
+			return _orderDal.TodayTotalPrice();
+		}
 		public int ActiveOrderCount()
 		{
 			return _orderDal.ActiveOrderCount();
@@ -47,6 +51,8 @@ namespace SignalR.BusinessLayer.Manager
 		{
 			return _orderDal.GetListAll();
 		}
+
+		
 
 		public int TotalOrderCount()
 		{

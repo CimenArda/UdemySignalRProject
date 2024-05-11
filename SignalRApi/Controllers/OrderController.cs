@@ -15,6 +15,14 @@ namespace SignalRApi.Controllers
 			_orderService = orderService;
 		}
 
+
+		[HttpGet("TodayTotalPrice")]
+		public IActionResult TodayTotalPrice()
+		{
+			return Ok(_orderService.TodayTotalPrice());
+		}
+
+
 		[HttpGet("TotalOrderCount")]
 		public IActionResult TotalOrderCount()
 		{

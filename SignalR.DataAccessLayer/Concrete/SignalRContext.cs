@@ -35,9 +35,15 @@ namespace SignalR.DataAccessLayer.Concrete
 		public DbSet<Order> Orders { get; set; }
 		public DbSet<OrderDetail> OrderDetails { get; set; }
 
+		public DbSet<MenuTable> menuTables { get; set; }
+
+		public DbSet<MoneyCase> moneyCases { get; set; }
+
+        public DbSet<Slider> Sliders { get; set; }
+
+        public DbSet<Basket> Baskets { get; set; }
 
 
 
-
-	}
+    }
 }
