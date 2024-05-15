@@ -1,0 +1,57 @@
+﻿@using SignalRWebUI.Dtos.NotificationDto
+@model CreateNotificationDto
+@{
+    ViewData["Title"] = "AddNotification";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="content">
+	<div class="container-fluid">
+		<h4 class="page-title"></h4>
+		<div class="row">
+
+			<div class="col-md-12">
+				<div class="card">
+					<div class="card-header">
+						<div class="card-title"></div>
+					</div>
+					<div class="card-body">
+						<form method="post">
+							<div class="form-group">
+								<label for="text">Tip</label>
+								<input type="text" asp-for="Type" class="form-control">
+
+							</div>
+
+							<div class="form-group">
+								<label for="text">İkon</label>
+								<input type="text" class="form-control" asp-for="Icon">
+
+							</div>
+							<div class="form-group">
+								<label for="text">Açıklama</label>
+								<input type="text" class="form-control" asp-for="Description">
+
+							</div>
+							<div class="form-group">
+								<label for="text">Tarih</label>
+								<input type="date" class="form-control" asp-for="Date">
+
+							</div><div class="form-group">
+								<label for="text">Durum</label>
+								<input type="text" class="form-control" asp-for="Status">
+
+							</div>
+
+							<button class="btn btn-success">Ekle</button>
+							<a href="/Notification/Index/" class="btn btn-danger">İptal Et</a>
+
+						</form>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

@@ -1,0 +1,35 @@
+﻿@using SignalRWebUI.Dtos.MenuTableDto
+@model CreateMenuTableDto
+@{
+    ViewData["Title"] = "AddMenuTable";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+<div class="content">
+	<div class="container-fluid">
+		<h4 class="page-title"></h4>
+		<div class="row">
+
+			<div class="col-md-12">
+				<div class="card">
+					<div class="card-header">
+						<div class="card-title"></div>
+					</div>
+					<div class="card-body">
+						<form method="post">
+							<div class="form-group">
+								<label for="text">Masa Adı</label>
+								<input type="text" asp-for="Name" class="form-control">
+
+							</div>
+							<button class="btn btn-success">Ekle</button>
+							<a href="/MenuTable/Index/" class="btn btn-danger">İptal Et</a>
+
+						</form>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

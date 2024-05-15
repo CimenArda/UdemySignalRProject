@@ -12,23 +12,70 @@ namespace SignalRApi.Hubs
 		private readonly IMoneyCaseService _moneyCaseService;
 		private readonly IMenuTableService _menuTableService;
 		private readonly IBookingService _bookingService;
-        public SignalRHub(ICategoryService categoryService, IProductService productService, IOrderService orderService, IMoneyCaseService moneyCaseService, IMenuTableService menuTableService, IBookingService bookingService)
-        {
-            _categoryService = categoryService;
-            _productService = productService;
-            _orderService = orderService;
-            _moneyCaseService = moneyCaseService;
-            _menuTableService = menuTableService;
-            _bookingService = bookingService;
-        }
+		private readonly INotificationService _notificationService;
+		public SignalRHub(ICategoryService categoryService, IProductService productService, IOrderService orderService, IMoneyCaseService moneyCaseService, IMenuTableService menuTableService, IBookingService bookingService, INotificationService notificationService)
+		{
+			_categoryService = categoryService;
+			_productService = productService;
+			_orderService = orderService;
+			_moneyCaseService = moneyCaseService;
+			_menuTableService = menuTableService;
+			_bookingService = bookingService;
+			_notificationService = notificationService;
+		}
 
-        public async Task GetBookingList()
+		public async Task GetBookingList()
         {
 			var value20 = _bookingService.TGetListAll();
 
             await Clients.All.SendAsync("ReceiveGetBookingList", value20);
 
         }
+		public async Task SendNotificationStatusFalse()
+		{
+			var value22 = _notificationService.TNotificationCountByStatusFalse();
+
+			await Clients.All.SendAsync("ReceiveCountNotificationStatusFalseList", value22);
+
+		}
+		public async Task SendGetAllNotificationStatusFalse()
+		{
+			var value23 = _notificationService.TGetAllNotificationsByFalse();
+
+			await Clients.All.SendAsync("ReceiveGetAllNotificationStatusFalseList", value23);
+
+		}
+
+		public async Task GetMenuTableList()
+		{
+			var value24 = _menuTableService.TGetListAll();
+
+			await Clients.All.SendAsync("ReceiveGetAllMenuTableList", value24);
+
+		}
+
+
+
+
+        public async Task SendMessage(string user,string message)
+        {
+           
+            await Clients.All.SendAsync("ReceiveMessage",user,message);
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
