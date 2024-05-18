@@ -9,6 +9,7 @@ namespace SignalR.DtoLayer.DiscountDto
     public class GetDiscountDto
     {
 
+        public bool Status { get; set; }
 
         public int ID { get; set; }
 

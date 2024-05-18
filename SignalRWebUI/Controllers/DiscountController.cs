@@ -17,7 +17,7 @@ namespace SignalRWebUI.Controllers
 		public async Task<IActionResult> Index()
 		{
 			var client = _httpClientFactory.CreateClient();
-			var responseMessage = await client.GetAsync("https://localhost:7191/api/Discount");
+			var responseMessage = await client.GetAsync("https://localhost:7191/api/Discount/GetAllByStatusTrue");
 
 			if (responseMessage.IsSuccessStatusCode)
 			{
@@ -106,6 +106,32 @@ namespace SignalRWebUI.Controllers
 
 
 		}
+
+
+
+		public async Task<IActionResult> StatusChangeFalse(int id)
+		{
+			var client = _httpClientFactory.CreateClient();
+			await client.GetAsync($"https://localhost:7191/api/Discount/ChangeStatusToFalse/{id}");
+
+
+
+			return RedirectToAction("Index");
+		}
+
+
+		public async Task<IActionResult> StatusChangeTrue(int id)
+		{
+			var client = _httpClientFactory.CreateClient();
+			await client.GetAsync($"https://localhost:7191/api/Discount/ChangeStatusToTrue/{id}");
+
+
+
+			return RedirectToAction("Index");
+		}
+
+
+
 
 
 

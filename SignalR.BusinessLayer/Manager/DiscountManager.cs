@@ -23,12 +23,27 @@ namespace SignalR.BusinessLayer.Manager
             _discountDal.Add(entity);
         }
 
-        public void TDelete(Discount entity)
+		public void TChangeStatusToFalse(int id)
+		{
+            _discountDal.ChangeStatusToFalse(id);
+		}
+
+		public void TChangeStatusToTrue(int id)
+		{
+            _discountDal.ChangeStatusToTrue(id);
+		}
+
+		public void TDelete(Discount entity)
         {
             _discountDal.Delete(entity);
         }
 
-        public Discount TGetById(int id)
+		public List<Discount> TGetAllByStatusTrue()
+		{
+			return _discountDal.GetAllByStatusTrue();
+		}
+
+		public Discount TGetById(int id)
         {
             return _discountDal.GetById(id);
         }

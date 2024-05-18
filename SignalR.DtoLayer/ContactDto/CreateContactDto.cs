@@ -18,5 +18,11 @@ namespace SignalR.DtoLayer.ContactDto
 
 
         public string FooterDesctiption { get; set; }
+        public string FooterTitle { get; set; }
+        public string OpenDays { get; set; }
+
+
+        public string OpenDaysDescription { get; set; }
+        public string OpenDaysHour { get; set; }
     }
 }

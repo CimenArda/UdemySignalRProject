@@ -16,7 +16,7 @@
 						<div class="card-title">Sayfanın alt kısmındaki iletişim ekleme işlemi burdan yapılmaktadır.</div>
 					</div>
 					<div class="card-body">
-						<form method="post">
+						<form method="post" asp-action="AddContact" asp-controller="Contact">
 							<div class="form-group">
 								<label for="text">Lokasyon</label>
 								<input type="text" asp-for="Location" class="form-control">
@@ -29,12 +29,27 @@
 
 							</div>
 							<div class="form-group">
-								<label for="text">Mail Adresi</label>
-								<input type="text" class="form-control" asp-for="Mail">
+								<label for="text">Alt Başlık</label>
+								<input type="text" class="form-control" asp-for="FooterTitle">
 
 							</div>
 							<div class="form-group">
-								<label for="text">Açıklama</label>
+								<label for="text">Açık Günlerimiz Başlığı Yazısı</label>
+								<input type="text" class="form-control" asp-for="OpenDays">
+
+							</div>
+							<div class="form-group">
+								<label for="text">Açık Günlerimiz Açıklama Yazısı</label>
+								<input type="text" class="form-control" asp-for="OpenDaysDescription">
+
+							</div>
+							<div class="form-group">
+								<label for="text">Açık Olan Saatler</label>
+								<input type="text" class="form-control" asp-for="OpenDaysHour">
+
+							</div>
+							<div class="form-group">
+								<label for="text"> Alt Açıklama</label>
 								<input type="text" class="form-control" asp-for="FooterDesctiption">
 
 							</div>

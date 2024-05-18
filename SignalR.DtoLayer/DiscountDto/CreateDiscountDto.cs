@@ -11,6 +11,7 @@ namespace SignalR.DtoLayer.DiscountDto
 
 
 
+        public bool Status { get; set; }
 
         public string Title { get; set; }
 

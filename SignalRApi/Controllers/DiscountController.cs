@@ -29,9 +29,14 @@ namespace SignalRApi.Controllers
         }
 
 
+		[HttpGet("GetAllByStatusTrue")]
+		public IActionResult GetAllByStatusTrue()
+		{
+			return Ok(_DiscountService.TGetAllByStatusTrue());
+		}
 
 
-        [HttpGet("{id}")]
+		[HttpGet("{id}")]
         public IActionResult GetDiscount(int id)
         {
             var value = _DiscountService.TGetById(id);
@@ -76,5 +81,22 @@ namespace SignalRApi.Controllers
             });
             return Ok("Discount alanı güncellendi");
         }
-    }
+
+
+
+
+        [HttpGet("ChangeStatusToTrue/{id}")]
+        public IActionResult ChangeStatusToTrue(int id)
+        {
+            _DiscountService.TChangeStatusToTrue(id);
+            return Ok();
+        }
+		[HttpGet("ChangeStatusToFalse/{id}")]
+		public IActionResult ChangeStatusToFalse(int id)
+		{
+			_DiscountService.TChangeStatusToFalse(id);
+			return Ok();
+		}
+
+	}
 }

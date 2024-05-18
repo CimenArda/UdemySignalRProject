@@ -42,15 +42,24 @@ namespace SignalRApi.Controllers
         public IActionResult CreateContact(CreateContactDto createContactDto)
         {
 
-            _ContactService.TAdd(new Contact()
-            {
-               Location = createContactDto.Location,
-               FooterDesctiption = createContactDto.FooterDesctiption,
-               Mail = createContactDto.Mail,
-               PhoneNumber = createContactDto.PhoneNumber
-            });
+			Contact contact = new Contact()
+			{
+				PhoneNumber = createContactDto.PhoneNumber,
+				Mail = createContactDto.Mail,
+				FooterDesctiption = createContactDto.FooterDesctiption,
+				Location = createContactDto.Location,
 
-            return Ok("Contact kısmı başarıyla eklendi");
+				FooterTitle = createContactDto.FooterTitle,
+				OpenDays = createContactDto.OpenDays,
+				OpenDaysDescription = createContactDto.OpenDaysDescription,
+				OpenDaysHour = createContactDto.OpenDaysHour
+			};
+
+
+
+			_ContactService.TAdd(contact);
+
+			return Ok("Contact kısmı başarıyla eklendi");
 
         }
 
@@ -65,14 +74,25 @@ namespace SignalRApi.Controllers
         [HttpPut]
         public IActionResult UpdateContact(UpdateContactDto updateContactDto)
         {
-            _ContactService.TUpdate(new Contact()
+
+            Contact contact = new Contact()
             {
-               PhoneNumber = updateContactDto.PhoneNumber,
-               Mail = updateContactDto.Mail,
-               FooterDesctiption= updateContactDto.FooterDesctiption,
-               Location = updateContactDto.Location,
-               ID = updateContactDto.ID
-            });
+				ID = updateContactDto.ID,
+				PhoneNumber = updateContactDto.PhoneNumber,
+				Mail = updateContactDto.Mail,
+				FooterDesctiption = updateContactDto.FooterDesctiption,
+				Location = updateContactDto.Location,
+
+				FooterTitle = updateContactDto.FooterTitle,
+				OpenDays = updateContactDto.OpenDays,
+				OpenDaysDescription = updateContactDto.OpenDaysDescription,
+				OpenDaysHour = updateContactDto.OpenDaysHour
+			};
+
+
+
+            _ContactService.TUpdate(contact);
+		
             return Ok("Contact alanı güncellendi");
         }
     }
